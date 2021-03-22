@@ -2,14 +2,14 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_tts/flutter_tts.dart';
 
-class Favourites extends StatefulWidget {
-  Favourites({Key key}) : super(key: key);
 
+class AboutMe extends StatefulWidget {
+  AboutMe({Key key}) : super(key: key);
   @override
-  _FavouritesState createState() => _FavouritesState();
+  _AboutMeState createState() => _AboutMeState();
 }
 
-class _FavouritesState extends State<Favourites> {
+class _AboutMeState extends State<AboutMe> {
   final FlutterTts flutterTts = FlutterTts();
   dynamic languages;
   double volume = 1.0;
@@ -21,35 +21,34 @@ class _FavouritesState extends State<Favourites> {
       await flutterTts.setPitch(pitch);
       await flutterTts.speak(value);
     }
-
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.purple,
-        title: Text("Favourites"),
-        centerTitle: true,
-      ),
-      body: SafeArea(
+      return Scaffold(
+       appBar: AppBar(
+         backgroundColor: Colors.purple,
+         title: Text("About Me"),
+         centerTitle: true,
+       ),
+       body: SafeArea(
           child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
             Row(mainAxisAlignment: MainAxisAlignment.center, children: [
               ElevatedButton.icon(
-                  onPressed: () => _speak("Hello World"),
+                  onPressed: () => _speak("I am Accessible Speech"),
                   icon: Icon(Icons.volume_up),
-                  label: Text("Hello World")),
+                  label: Text("I am Accessible Speech")),
             ]),
             Row(mainAxisAlignment: MainAxisAlignment.center, children: [
               ElevatedButton.icon(
-                  onPressed: () => _speak("My name is Accesssible Speech"),
+                  onPressed: () => _speak("I have selective mutism"),
                   icon: Icon(Icons.volume_up),
-                  label: Text("My name is Accesssible Speech")),
+                  label: Text("I have selective mutism")),
             ]),
             Row(mainAxisAlignment: MainAxisAlignment.center, children: [
               ElevatedButton.icon(
-                  onPressed: () => _speak("I live at UOttawa"),
+                  onPressed: () => _speak("I have 2 hands"),
                   icon: Icon(Icons.volume_up),
-                  label: Text("I live at UOttawa")),
+                  label: Text("I have 2 hands")),
             ]),
           ])),
     );

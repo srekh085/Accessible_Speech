@@ -1,3 +1,4 @@
+import 'package:accessible_speech/pages/CategoryPages/aboutMe.dart';
 import 'package:accessible_speech/pages/categories.dart';
 import 'package:flutter/material.dart';
 import 'pages/home.dart';
@@ -26,6 +27,7 @@ class _MyAppState extends State<MyApp> {
         '/': (context) => Home(),
         '/favourites': (context) => Favourites(),
         '/categories': (context) => Categories(),
+        '/categories/aboutme': (conext) => AboutMe(),
       },
     );
   }
