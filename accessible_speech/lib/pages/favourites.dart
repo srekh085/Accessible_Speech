@@ -41,7 +41,7 @@ class _FavouritesState extends State<Favourites> {
             ]),
             Row(mainAxisAlignment: MainAxisAlignment.center, children: [
               ElevatedButton.icon(
-                  onPressed: () => _speak("My name is Accesssible Speech"),
+                  onPressed: () => _speak("My name is Accessible Speech"),
                   icon: Icon(Icons.volume_up),
                   label: Text("My name is Accesssible Speech")),
             ]),

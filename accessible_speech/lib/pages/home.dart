@@ -12,7 +12,7 @@ class _HomeState extends State<Home> {
   dynamic languages;
   double volume = 1.0;
   double pitch = 1.0;
-  dynamic speak = "good";
+  dynamic speak = "";
 
   Widget build(BuildContext context) {
     Future _speak() async {
@@ -40,7 +40,7 @@ class _HomeState extends State<Home> {
                     ),
                     onChanged: (text) {
                       setState(() {
-                        text = speak;
+                        speak = text;
                       });
                     },
                   )),
