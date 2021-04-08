@@ -20,6 +20,7 @@ class _HomeState extends State<Home> {
       await flutterTts.speak(speak);
     }
 
+    final maxLines = 10;
     return Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.purple,
@@ -28,15 +29,21 @@ class _HomeState extends State<Home> {
         ),
         body: SafeArea(
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Container(
-                  width: 380,
+                  width: 400,
+                  height: maxLines * 24.0,
+                  margin: EdgeInsets.all(12),
                   child: TextField(
-                    decoration: InputDecoration(
+                    maxLines: maxLines,
+                    decoration: new InputDecoration(
+                      fillColor: Colors.blue[50],
+                      filled: true,
                       labelText: 'Type to Speak',
-                      border: OutlineInputBorder(),
+                      border: new OutlineInputBorder(
+                          borderSide: new BorderSide(color: Colors.purple)),
                     ),
                     onChanged: (text) {
                       setState(() {
@@ -45,27 +52,32 @@ class _HomeState extends State<Home> {
                     },
                   )),
               Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-                ElevatedButton.icon(
+                IconButton(
+                    tooltip: 'Tap to Speak',
                     onPressed: () => _speak(),
-                    icon: Icon(Icons.volume_up),
-                    label: Text("SPEAK")),
+                    iconSize: 75,
+                    color: Colors.purple,
+                    icon: Icon(Icons.volume_up)),
               ]),
-              Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-                ElevatedButton.icon(
-                    onPressed: () {
-                      Navigator.pushNamed(context, '/favourites');
-                    },
-                    icon: Icon(Icons.favorite),
-                    label: Text("Favourites")),
-              ]),
-              Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-                ElevatedButton.icon(
-                    onPressed: () {
-                      Navigator.pushNamed(context, '/categories');
-                    },
-                    icon: Icon(Icons.category),
-                    label: Text("Categories")),
-              ])
+              Container(
+                margin: EdgeInsets.all(5),
+                child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      ElevatedButton.icon(
+                          onPressed: () {
+                            Navigator.pushNamed(context, '/favourites');
+                          },
+                          icon: Icon(Icons.favorite),
+                          label: Text("Favourites")),
+                      ElevatedButton.icon(
+                          onPressed: () {
+                            Navigator.pushNamed(context, '/categories');
+                          },
+                          icon: Icon(Icons.category),
+                          label: Text("Categories"))
+                    ]),
+              )
             ],
           ),
         ));
