@@ -23,13 +23,18 @@ class _CategoriesState extends State<Categories> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-                ElevatedButton.icon(
-                    onPressed: () {
-                      Navigator.pushNamed(context, '/categories/aboutme');
-                    },
-                    icon: Icon(Icons.person),
-                    label: Text("About Me")),
-              ]),
+              ElevatedButton.icon(
+                  style: ElevatedButton.styleFrom(
+                    primary: Colors.purple,
+                    padding: EdgeInsets.symmetric(horizontal: 50, vertical: 20),
+                    textStyle: TextStyle(fontSize: 20),
+                  ),
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/categories/aboutme');
+                  },
+                  icon: Icon(Icons.person),
+                  label: Text("About Me")),
+            ]),
           ],
         )));
   }

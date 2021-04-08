@@ -22,6 +22,7 @@ class _HomeState extends State<Home> {
 
     final maxLines = 10;
     return Scaffold(
+        resizeToAvoidBottomInset: false,
         appBar: AppBar(
           backgroundColor: Colors.purple,
           title: Text("Home"),
@@ -38,10 +39,11 @@ class _HomeState extends State<Home> {
                   margin: EdgeInsets.all(12),
                   child: TextField(
                     maxLines: maxLines,
+                    textAlign: TextAlign.center,
                     decoration: new InputDecoration(
-                      fillColor: Colors.blue[50],
+                      fillColor: Colors.purple[50],
                       filled: true,
-                      labelText: 'Type to Speak',
+                      hintText: 'Type to Speak',
                       border: new OutlineInputBorder(
                           borderSide: new BorderSide(color: Colors.purple)),
                     ),
@@ -65,12 +67,31 @@ class _HomeState extends State<Home> {
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       ElevatedButton.icon(
+                          style: ElevatedButton.styleFrom(
+                            primary: Colors.purple,
+                            padding: EdgeInsets.symmetric(
+                                horizontal: 50, vertical: 20),
+                            textStyle: TextStyle(fontSize: 20),
+                          ),
                           onPressed: () {
                             Navigator.pushNamed(context, '/favourites');
                           },
                           icon: Icon(Icons.favorite),
                           label: Text("Favourites")),
+                    ]),
+              ),
+              Container(
+                margin: EdgeInsets.all(5),
+                child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
                       ElevatedButton.icon(
+                          style: ElevatedButton.styleFrom(
+                            primary: Colors.purple,
+                            padding: EdgeInsets.symmetric(
+                                horizontal: 50, vertical: 20),
+                            textStyle: TextStyle(fontSize: 20),
+                          ),
                           onPressed: () {
                             Navigator.pushNamed(context, '/categories');
                           },

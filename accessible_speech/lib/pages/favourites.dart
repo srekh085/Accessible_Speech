@@ -23,35 +23,142 @@ class _FavouritesState extends State<Favourites> {
     }
 
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.purple,
-        title: Text("Favourites"),
-        centerTitle: true,
-      ),
-      body: SafeArea(
+        appBar: AppBar(
+          backgroundColor: Colors.purple,
+          title: Text("Favourites"),
+          centerTitle: true,
+        ),
+        body: SafeArea(
           child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-            Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-              ElevatedButton.icon(
-                  onPressed: () => _speak("Hello World"),
-                  icon: Icon(Icons.volume_up),
-                  label: Text("Hello World")),
-            ]),
-            Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-              ElevatedButton.icon(
-                  onPressed: () => _speak("My name is Accessible Speech"),
-                  icon: Icon(Icons.volume_up),
-                  label: Text("My name is Accesssible Speech")),
-            ]),
-            Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-              ElevatedButton.icon(
-                  onPressed: () => _speak("I live at UOttawa"),
-                  icon: Icon(Icons.volume_up),
-                  label: Text("I live at UOttawa")),
-            ]),
-          ])),
-    );
+                Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+                  Container(
+                    width: 350,
+                    margin: const EdgeInsets.all(15.0),
+                    padding: const EdgeInsets.all(3.0),
+                    decoration: BoxDecoration(
+                        border: Border.all(color: Colors.purpleAccent[200])),
+                    child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          Container(
+                            margin: const EdgeInsets.all(15.0),
+                            padding: const EdgeInsets.all(3.0),
+                            child: Text("Hello World"),
+                            width: 200,
+                          ),
+                          IconButton(
+                              tooltip: 'Tap to Speak',
+                              onPressed: () => _speak("Hello World"),
+                              iconSize: 30,
+                              color: Colors.purple,
+                              icon: Icon(Icons.volume_up)),
+                          IconButton(
+                            iconSize: 30,
+                            color: Colors.purple,
+                            onPressed: () => _speak("Hello World"),
+                            icon: Icon(Icons.edit),
+                          )
+                        ]),
+                  )
+                ]),
+                Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+                  Container(
+                    margin: const EdgeInsets.all(15.0),
+                    padding: const EdgeInsets.all(3.0),
+                    width: 350,
+                    decoration: BoxDecoration(
+                        border: Border.all(color: Colors.purpleAccent[200])),
+                    child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          Container(
+                            margin: const EdgeInsets.all(15.0),
+                            padding: const EdgeInsets.all(3.0),
+                            child: Text("I am Accessible Speech"),
+                            width: 200,
+                          ),
+                          IconButton(
+                              tooltip: 'Tap to Speak',
+                              onPressed: () => _speak("I am Accessible Speech"),
+                              iconSize: 30,
+                              color: Colors.purple,
+                              icon: Icon(Icons.volume_up)),
+                          IconButton(
+                            iconSize: 30,
+                            color: Colors.purple,
+                            onPressed: () => _speak("I am Accessible Speech"),
+                            icon: Icon(Icons.edit),
+                          )
+                        ]),
+                  )
+                ]),
+                Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+                  Container(
+                    width: 350,
+                    margin: const EdgeInsets.all(15.0),
+                    padding: const EdgeInsets.all(3.0),
+                    decoration: BoxDecoration(
+                        border: Border.all(color: Colors.purpleAccent[200])),
+                    child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          Container(
+                            margin: const EdgeInsets.all(15.0),
+                            padding: const EdgeInsets.all(3.0),
+                            child: Text("Welcome to Design Day"),
+                            width: 200,
+                          ),
+                          IconButton(
+                              tooltip: 'Tap to Speak',
+                              onPressed: () => _speak("Welcome to Design Day"),
+                              iconSize: 30,
+                              color: Colors.purple,
+                              icon: Icon(Icons.volume_up)),
+                          IconButton(
+                            iconSize: 30,
+                            color: Colors.purple,
+                            onPressed: () => _speak("Welcome to Design Day"),
+                            icon: Icon(Icons.edit),
+                          )
+                        ]),
+                  )
+                ]),
+                Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+                  Container(
+                    margin: const EdgeInsets.all(15.0),
+                    padding: const EdgeInsets.all(3.0),
+                    width: 350,
+                    decoration: BoxDecoration(
+                        border: Border.all(color: Colors.purpleAccent[200])),
+                    child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          Container(
+                            margin: const EdgeInsets.all(15.0),
+                            padding: const EdgeInsets.all(3.0),
+                            child: Text("We are happy to have you"),
+                            width: 200,
+                          ),
+                          IconButton(
+                              tooltip: 'Tap to Speak',
+                              onPressed: () =>
+                                  _speak("We are happy to have you"),
+                              iconSize: 30,
+                              color: Colors.purple,
+                              icon: Icon(Icons.volume_up)),
+                          IconButton(
+                            iconSize: 30,
+                            color: Colors.purple,
+                            onPressed: () => _speak("We are happy to have you"),
+                            icon: Icon(Icons.edit),
+                          )
+                        ]),
+                  )
+                ]),
+              ]),
+        ));
   }
 }
